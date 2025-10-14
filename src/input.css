@@ -93,3 +93,42 @@ body.body-bg {
     0% 100%                     /* Bottom-left corner */
     );
 }
+
+/* 1. Basic card styling */
+.card {
+  background-color: #f0f4f8; /* Light blue-gray background */
+  padding: 20px;
+  position: relative;
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  color: #333;
+  
+  /* This is CRUCIAL for positioning the fold */
+  position: relative; 
+}
+
+/* 2. The dog-ear fold element */
+.card::before {
+  content: '';
+  position: absolute;
+  
+  /* Position it in the bottom-right corner */
+  bottom: 0;
+  right: 0;
+  
+  /* Define the size of the fold */
+  width: 50px;
+  height: 50px;
+  
+  /* 3. Create the fold and shadow */
+  
+  /* The gradient creates the triangular fold shape */
+  background: linear-gradient(315deg, transparent 50%, #b0bec5 50%);
+  
+  /* The shadow makes it look like the corner is lifted */
+  box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.2);
+
+  /* Optional: Smooths the inner corner of the fold */
+  border-top-left-radius: 8px;
+}
