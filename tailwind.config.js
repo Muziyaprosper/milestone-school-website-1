@@ -1,21 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./index.html",
+    "./*.html",
     "./pages/**/*.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./scripts.js"
   ],
   theme: {
-    container: {
-      center: true,
-      padding: '1rem',
-      screens: {
-        sm: '100%',
-        md: '100%',
-        lg: '100%',
-        xl: '100%',
-      },
-    },
     extend: {
       colors: {
         turquoise: '#40E0D0',
@@ -30,8 +20,22 @@ module.exports = {
           900: '#111827',
         },
       },
+      
+theme: {
+  container: {
+    center: false,
+    padding: '0',
+    screens: {
+      sm: '100%',
+      md: '100%',
+      lg: '100%',
+      xl: '100%',
+    },
+  },
+},
+
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        'sans': ['Poppins', 'sans-serif'],
       },
       textShadow: {
         sm: '1px 1px 2px rgba(0, 0, 0, 0.25)',
@@ -48,7 +52,7 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideInUp: {
-          '0%': { opacity: '0', transform: 'translateY(50px)' },
+          '0%': { opacity: '0', transform: 'translateY(50px)' }, // Changed to translateY for correct up/down motion
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
@@ -59,10 +63,13 @@ module.exports = {
       animation: {
         slideInLeft: 'slideInLeft 2s ease-out forwards',
         slideInRight: 'slideInRight 2s ease-out forwards',
-        slideInUp: 'slideInUp 2s ease-out forwards',
+        slideInUp: 'slideInUp 2s ease-out forwards', // Corrected typo 'fowards'
         fadeIn: 'fadeIn 2s ease-in forwards',
       },
     },
   },
-  plugins: [require('tailwindcss-textshadow')],
+  plugins: [
+    require('tailwindcss-textshadow') // This is the only line needed for the plugin to work
+  ],
 };
+

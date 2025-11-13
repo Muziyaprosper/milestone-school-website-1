@@ -5,17 +5,6 @@
   "hints": {
     "axe/name-role-value": "off",
     "disown-opener": "off",
-    "no-inline-styles": "off",
-    "compat-api/css": "off"
-  },
-  "browserslist": [
-    "defaults",
-    "not ie 11",
-    "not and_chr <= 141",
-    "not chrome <= 141",
-    "not edge <= 141",
-    "not firefox <= 144",
-    "not safari <= 26",
-    "not samsung <= 28"
-  ]
+    "no-inline-styles": "off"
+  }
 }
